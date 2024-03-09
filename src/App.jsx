@@ -13,10 +13,12 @@ function App() {
 
 
   async function rest(){
-    const response = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=22.51800&lng=88.38320&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING")
+    const url = 'https://corsproxy.org/?' + encodeURIComponent('https://www.swiggy.com/dapi/restaurants/list/v5?lat=22.51800&lng=88.38320&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING');
+    const response = await fetch(url)
     const data = await response.json();
     console.log(data)
     setFood(data)
+    
   }
   
 
